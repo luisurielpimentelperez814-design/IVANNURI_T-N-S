@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:background="#0A0A0A">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IVANNURI T-N-S"
-        android:textSize="28sp"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IVANNURI T-N-S"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="32-bit float • 96kHz • 5 tipos saturación"
+            android:textSize="14sp"
+            android:textColor="#AAAAAA"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- DRIVE -->
+        <TextView android:text="DRIVE - SATURACIÓN" android:textColor="#FFF" android:textStyle="bold"/>
+        <SeekBar android:id="@+id/drive" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="30"/>
+        <TextView android:id="@+id/driveVal" android:text="30%" android:textColor="#888" android:layout_marginBottom="24dp"/>
+
+        <!-- MIX -->
+        <TextView android:text="MIX" android:textColor="#FFF" android:textStyle="bold"/>
+        <SeekBar android:id="@+id/mix" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="70"/>
+        <TextView android:id="@+id/mixVal" android:text="70%" android:textColor="#888" android:layout_marginBottom="24dp"/>
+
+        <!-- MASTER -->
+        <TextView android:text="MASTER OUTPUT" android:textColor="#FFF" android:textStyle="bold"/>
+        <SeekBar android:id="@+id/master" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="80"/>
+        <TextView android:id="@+id/masterVal" android:text="-4.0 dB" android:textColor="#888" android:layout_marginBottom="24dp"/>
+
+        <!-- TIPO -->
+        <TextView android:text="TIPO DE SATURACIÓN" android:textColor="#FFF" android:textStyle="bold" android:layout_marginTop="16dp"/>
+        <RadioGroup android:id="@+id/typeGroup" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/tube" android:text="Tube" android:textColor="#FFF" android:checked="true"/>
+            <RadioButton android:id="@+id/tape" android:text="Tape" android:textColor="#FFF"/>
+            <RadioButton android:id="@+id/transistor" android:text="Transistor" android:textColor="#FFF"/>
+            <RadioButton android:id="@+id/transformer" android:text="Transformer" android:textColor="#FFF"/>
+            <RadioButton android:id="@+id/digital" android:text="Digital" android:textColor="#FFF"/>
+        </RadioGroup>
+
+        <Button android:id="@+id/btnCalibrate" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="CALIBRAR IA (FLASK)" android:layout_marginTop="32dp" android:backgroundTint="#1DB954" android:textColor="#000"/>
+
+    </LinearLayout>
+</ScrollView>
